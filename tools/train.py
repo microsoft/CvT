@@ -11,7 +11,6 @@ import time
 import torch
 import torch.nn.parallel
 import torch.optim
-from torch.optim.swa_utils import AveragedModel, SWALR, update_bn
 from torch.utils.collect_env import get_pretty_env_info
 from tensorboardX import SummaryWriter
 

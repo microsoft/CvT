@@ -1,5 +1,5 @@
 # Introduction
-This is an official implementation of [CvT: Introducing Convolutions to Vision Transformers](https://arxiv.org/abs/2103.15808). We present a new architecture, named Convolutional vision Transformers (CvT), that improves Vision Transformers (ViT) in performance and efficienty by introducing convolutions into ViT to yield the best of both disignes. This is accomplished through two primary modifications: a hierarchy of Transformers containing a new convolutional token embedding, and a convolutional Transformer block leveraging a convolutional projection. These changes introduce desirable properties of convolutional neural networks (CNNs) to the ViT architecture (e.g. shift, scale, and distortion invariance) while maintaining the merits of Transformers (e.g. dynamic attention, global context, and better generalization). We validate CvT by conducting extensive experiments, showing that this approach achieves state-of-the-art performance over other Vision Transformers and ResNets on ImageNet-1k, with fewer parameters and lower FLOPs. In addition, performance gains are maintained when pretrained on larger dataset (e.g. ImageNet-22k) and fine-tuned to downstream tasks. Pre-trained on ImageNet-22k, our CvT-W24 obtains a top-1 accuracy of 87.7% on the ImageNet-1k val set. Finally, our results show that the positional encoding, a crucial component in existing Vision Transformers, can be safely removed in our model, simplifying the design for higher resolution vision tasks. 
+This is an official implementation of [CvT: Introducing Convolutions to Vision Transformers](https://arxiv.org/abs/2103.15808). We present a new architecture, named Convolutional vision Transformers (CvT), that improves Vision Transformers (ViT) in performance and efficienty by introducing convolutions into ViT to yield the best of both designs. This is accomplished through two primary modifications: a hierarchy of Transformers containing a new convolutional token embedding, and a convolutional Transformer block leveraging a convolutional projection. These changes introduce desirable properties of convolutional neural networks (CNNs) to the ViT architecture (e.g. shift, scale, and distortion invariance) while maintaining the merits of Transformers (e.g. dynamic attention, global context, and better generalization). We validate CvT by conducting extensive experiments, showing that this approach achieves state-of-the-art performance over other Vision Transformers and ResNets on ImageNet-1k, with fewer parameters and lower FLOPs. In addition, performance gains are maintained when pretrained on larger dataset (e.g. ImageNet-22k) and fine-tuned to downstream tasks. Pre-trained on ImageNet-22k, our CvT-W24 obtains a top-1 accuracy of 87.7% on the ImageNet-1k val set. Finally, our results show that the positional encoding, a crucial component in existing Vision Transformers, can be safely removed in our model, simplifying the design for higher resolution vision tasks. 
 
 ![](figures/pipeline.svg)
 
@@ -24,7 +24,7 @@ You can download all the models from our [model zoo](https://1drv.ms/u/s!AhIXJn_
 
 # Quick start
 ## Installation
-Assuming that you have installed PyTroch and TorchVision, if not, please follow the [officiall instruction](https://pytorch.org/) to install them firstly. 
+Assuming that you have installed PyTorch and TorchVision, if not, please follow the [officiall instruction](https://pytorch.org/) to install them firstly. 
 Intall the dependencies using cmd:
 
 ``` sh
@@ -99,7 +99,7 @@ Options:
 bash run.sh -g 8 -t train --cfg experiments/imagenet/cvt/cvt-13-224x224.yaml
 ```
 
-You can also modify the config paramters by the command line. For example, if you want to change the lr rate to 0.1, you can run the command:
+You can also modify the config parameters from the command line. For example, if you want to change the lr rate to 0.1, you can run the command:
 ``` sh
 bash run.sh -g 8 -t train --cfg experiments/imagenet/cvt/cvt-13-224x224.yaml TRAIN.LR 0.1
 ```

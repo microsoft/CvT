@@ -8,5 +8,5 @@ tensorboardX
 pandas
 ptflops
 timm==0.3.2
-numpy==1.19.3
+numpy==1.22.0
 einops

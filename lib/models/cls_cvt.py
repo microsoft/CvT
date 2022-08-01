@@ -140,7 +140,7 @@ class Attention(nn.Module):
                     groups=dim_in
                 )),
                 ('bn', nn.BatchNorm2d(dim_in)),
-                ('rearrage', Rearrange('b c h w -> b (h w) c')),
+                ('rearrange', Rearrange('b c h w -> b (h w) c')),
             ]))
         elif method == 'avg':
             proj = nn.Sequential(OrderedDict([
@@ -150,7 +150,7 @@ class Attention(nn.Module):
                     stride=stride,
                     ceil_mode=True
                 )),
-                ('rearrage', Rearrange('b c h w -> b (h w) c')),
+                ('rearrange', Rearrange('b c h w -> b (h w) c')),
             ]))
         elif method == 'linear':
             proj = None
